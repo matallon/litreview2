@@ -1,0 +1,666 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Literature Review</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+}
+
+.simple-table-header {
+	background: rgb(247, 246, 243);
+	color: black;
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(145, 145, 142, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(187, 132, 108, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(215, 129, 58, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 148, 51, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(108, 155, 125, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(91, 151, 189, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(167, 130, 195, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(205, 116, 159, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(225, 111, 100, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(145, 145, 142, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(187, 132, 108, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(215, 129, 58, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 148, 51, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(108, 155, 125, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(91, 151, 189, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(167, 130, 195, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(205, 116, 159, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(225, 111, 100, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="9a287186-e3fc-4b61-82d1-42f48ca48733" class="page sans"><header><img class="page-cover-image" src="https://cdn.theatlantic.com/thumbor/fJu8YZvzCmOi6vsxNJ_EIv2qT94=/156x44:1920x1036/976x549/media/img/mt/2016/02/slack_imgs/original.png" style="object-position:center 48.089999999999996%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">📔</span></div><h1 class="page-title">Literature Review</h1><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Class</th><td><span class="selected-value select-value-color-brown">Creative Projects 2</span></td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M6.98643729,14.0000972 C5.19579566,14.0000972 3.40419152,13.3106896 2.04245843,11.9323606 C-0.681017475,9.21200555 -0.680780251,4.76029539 2.04293482,2.04012507 C4.76664406,-0.68004331 9.22427509,-0.68004331 11.9480135,2.04013479 C13.272481,3.36277455 14,5.1330091 14,6.99552762 C14,8.87640182 13.2721894,10.6285043 11.9480135,11.9509302 C10.5679344,13.3105924 8.77756503,14.0000972 6.98643729,14.0000972 Z M10.2705296,7.00913883 L10.2705296,8.46099754 L10.2705296,8.65543362 L10.076181,8.65543362 L8.6543739,8.65543362 L5.72059514,8.65543362 L5.52619796,8.65543362 L5.52619796,8.46099754 L5.52619796,5.52541044 L5.52619796,3.37946773 L5.52619796,3.18502193 L5.72059514,3.18502193 L7.17253164,3.18502193 L7.36692883,3.18502193 L7.36692883,3.37946773 L7.36692883,6.81467358 L10.076181,6.81467358 L10.2705296,6.81467358 L10.2705296,7.00913883 Z M12.1601539,6.99552762 C12.1601539,5.61697497 11.6190112,4.32597154 10.6393933,3.34769528 C8.63253764,1.34336744 5.35197452,1.34061603 3.34153136,3.33944106 C3.33868273,3.34219247 3.33607716,3.34494388 3.33322852,3.34769528 C1.32397148,5.35459953 1.32372842,8.63641682 3.33322852,10.6433794 C5.34295224,12.6504489 8.62968901,12.6504489 10.6393933,10.6433794 C11.6190112,9.66506426 12.1601539,8.37408027 12.1601539,6.99552762 Z"></path></svg></span>Created</th><td><time>@December 2, 2021 2:07 PM</time></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M3.73333,3.86667 L7.46667,3.86667 C8.49613,3.86667 9.33333,4.70387 9.33333,5.73333 C9.33333,6.7628 8.49613,7.6 7.46667,7.6 L6.53333,7.6 C6.01813,7.6 5.6,8.0186 5.6,8.53333 C5.6,9.04807 6.01813,9.46667 6.53333,9.46667 L7.46667,9.46667 C9.5284,9.46667 11.2,7.79507 11.2,5.73333 C11.2,3.6716 9.5284,2 7.46667,2 L3.73333,2 C1.6716,2 0,3.6716 0,5.73333 C0,7.124 0.762067,8.33453 1.88953,8.97713 C1.87553,8.83107 1.86667,8.6836 1.86667,8.53333 C1.86667,7.92013 1.98753,7.33447 2.2036,6.7978 C1.99267,6.4954 1.86667,6.12953 1.86667,5.73333 C1.86667,4.70387 2.70387,3.86667 3.73333,3.86667 Z M12.1095,5.28907 C12.1231,5.4356 12.1333,5.58307 12.1333,5.73333 C12.1333,6.34607 12.0101,6.9294 11.7931,7.46513 C12.0059,7.768 12.1333,8.13573 12.1333,8.53333 C12.1333,9.5628 11.2961,10.4 10.2667,10.4 L6.53333,10.4 C5.50387,10.4 4.66667,9.5628 4.66667,8.53333 C4.66667,7.50387 5.50387,6.66667 6.53333,6.66667 L7.46667,6.66667 C7.98187,6.66667 8.4,6.24807 8.4,5.73333 C8.4,5.2186 7.98187,4.8 7.46667,4.8 L6.53333,4.8 C4.4716,4.8 2.8,6.4716 2.8,8.53333 C2.8,10.59507 4.4716,12.2667 6.53333,12.2667 L10.2667,12.2667 C12.3284,12.2667 14,10.59507 14,8.53333 C14,7.14267 13.2375,5.93167 12.1095,5.28907 Z"></path></svg></span>Materials</th><td></td></tr><tr class="property-row property-row-checkbox"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCheckbox"><path d="M0,3 C0,1.34314 1.34326,0 3,0 L11,0 C12.6567,0 14,1.34314 14,3 L14,11 C14,12.6569 12.6567,14 11,14 L3,14 C1.34326,14 0,12.6569 0,11 L0,3 Z M3,1.5 C2.17139,1.5 1.5,2.17157 1.5,3 L1.5,11 C1.5,11.8284 2.17139,12.5 3,12.5 L11,12.5 C11.8286,12.5 12.5,11.8284 12.5,11 L12.5,3 C12.5,2.17157 11.8286,1.5 11,1.5 L3,1.5 Z M2.83252,6.8161 L3.39893,6.27399 L3.57617,6.10425 L3.92334,5.77216 L4.26904,6.10559 L4.44531,6.27582 L5.58398,7.37402 L9.28271,3.81073 L9.45996,3.64008 L9.80664,3.3056 L10.1538,3.63989 L10.3311,3.81067 L10.8936,4.35303 L11.0708,4.52399 L11.4434,4.88379 L11.0708,5.24353 L10.8936,5.41437 L6.1084,10.0291 L5.93115,10.2 L5.58398,10.5344 L5.23682,10.2 L5.05957,10.0292 L2.83057,7.87946 L2.65283,7.70801 L2.27832,7.34674 L2.6543,6.98694 L2.83252,6.8161 Z"></path></svg></span>Reviewed</th><td><div class="checkbox checkbox-off"></div></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Term</th><td><span class="selected-value">First Term</span></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Type</th><td><span class="selected-value select-value-color-blue">Writing</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Year</th><td><span class="selected-value select-value-color-pink">Second Year</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>author / Lecturer</th><td></td></tr></tbody></table></header><div class="page-body"><h1 id="4edcbecd-9a0f-43f2-9226-6cac12b39268" class="">Literature Review</h1><p id="94c53896-8760-4b8d-9c82-f084364ab5b5" class=""><em><strong>Contents </strong></em></p><nav id="b1fa3ae5-232a-454e-b7f8-c3a982d818d3" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#4edcbecd-9a0f-43f2-9226-6cac12b39268">Literature Review</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#4c80e210-6f24-4fb9-8a90-1a399d26a26a"><span style="border-bottom:0.05em solid">My project space</span></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#eee69db2-5ea7-4e45-94f8-b7d585a415ac"><em>Colour Coding Key.</em></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a886808b-cafd-4435-93df-9a56384269f4">Tags</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#206d5e75-74ed-4418-9f58-6a93d2b90173">AI Generated landscapes</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#56e717a7-8631-463b-8059-af5f3e69ec98">NVIDIA AI </a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#3c90bbe3-0ab7-428b-87b1-4975ea23160f">Landscapes generated using the styleGAN: </a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#bd9b93d0-6b1d-41c5-8a1e-3ca811709bdb">Dreamscape: Using AI to Create Speculative VR Environments</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#bcf13809-38c2-4c1b-b8ec-162d16fe781d">Noise and Procedural generation </a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#2371741a-a5c6-46a8-8b93-5e9958ac03dc"><strong>Creative AI: Procedural generation takes game development to new worlds</strong></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#5d104bf0-6b27-4d3a-909b-70ab7062bc1b">Procedural modelling of terrains with constraints</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#f7acd346-5b3e-40b4-86ed-47420b75b490">Procedural Generation of 3D Canyons</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#e27ecd89-71be-4ddb-80bd-b809a5b173c0">Building Worlds with Noise Generation | No Man&#x27;s Sky</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#2db7a686-7a7f-40d1-b23d-c6abc7827a08">Procedurally Generated Low-Poly Terrains in Unity</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0b43d3ce-7225-418e-9b52-969488c3036f"><span style="border-bottom:0.05em solid">Smart/Dumb Objects </span></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f7ceffea-a9e7-4820-aaf1-bc5c23637da6"><span style="border-bottom:0.05em solid">Natural Generation. </span></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#b58e7c0f-49cf-4bbc-8b9b-5cd142fc5792"><strong>Speculative Before the Turn: Reintroducing Feminist Materialist Performativity</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7eb42794-5bec-46f1-9600-0b32df444c0c">Games Research </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#ce17c32b-e145-4c85-8c8b-cb47a5db6ef2">Research into Game Development </a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#6bfc40e1-d72d-4ca7-b97d-e46cf03feb44">I spent a week making an AIs game idea - Sebastian Lague </a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#64c7189e-5aac-441c-86fd-12e02832d284">Game Devs and Others: Tales From The Margins. </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e954e927-8739-4fce-82cd-00c8461392de">Games</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#a48a2549-4bec-4786-9e6c-5b0b3e10276c">Stone Story RPG</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#ec700e6e-2992-4977-b7e1-8f5df9c2a61e"><strong>Panoramical</strong></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#bcd6322c-978e-4ae4-9644-c368544f5bf8">Minecraft</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#b8718d6a-a52a-4e8b-837a-aac42f297432">No Mans Sky</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#360c6bc2-de07-4c9e-80d0-25954ad5ba4a">Software</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#14c7eb32-a7fd-487a-8add-39ff0a6a5154">Speedtree</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0dfd5f80-a1dd-4b8f-ab9a-50e53375535e">Visuals Mood board </a></div></nav><h1 id="4c80e210-6f24-4fb9-8a90-1a399d26a26a" class=""><span style="border-bottom:0.05em solid">My project space</span></h1><p id="990ee4be-08a2-4d9a-8055-cfed27b99401" class="">I’ve become very interested in indie game development recently, so I am wanting my project space to reflect this. To reflect the theme of smart /dumb interactions and the idea of ‘intelligence’ I’ve been researching the role of AI in games and how it can be applied to games in many different ways.</p><p id="6044e674-4016-447e-93f6-59da30903ea8" class="">One area I&#x27;ve I&#x27;ve been looking at is the development of game worlds and 3D or 2D environments, and how these worlds could be generated by an AI. So, a lot of the research centres around generative landscapes and worlding. Worlding is a concept I looked at quite a lot last year too, so I would love to expand on this and create prototypes and projects using this as a central idea, whilst also being within the realm of indie game design. </p><p id="12b0f6b5-f093-402e-a179-09707bb4eca9" class="">As well as all the contents of this literature review, I&#x27;ve been trying to make an effort to learning how to use programs such as Unity and Blender to help me create these prototypes and in the end the final outcome. Starting out, I had a small amount of experience in Blender and none in Unity so this has also been a fairly big part of what I&#x27;ve been researching for this module also, so I&#x27;m able to actually start potentially create things in the future.</p><p id="67b9e27a-57c8-4da4-bf16-e629d4b7ee4d" class="">In this literature review, I have referred more to smart and dumb software than to smart and dumb objects. Whilst I&#x27;ve tried to include a few references to smart objects, they don&#x27;t fit with the rest of my project area which is instead more about software and programs than the physical objects themselves.</p><h3 id="eee69db2-5ea7-4e45-94f8-b7d585a415ac" class=""><em>Colour Coding Key.</em></h3><p id="b1108bef-1680-4f7e-a348-b7e5273501b8" class=""><mark class="highlight-brown_background">All quotes are highlighted in this colour.</mark> </p><p id="7d06f0da-a0dd-4476-b0d6-5f4da8eddee4" class=""><mark class="highlight-blue_background">All references are highlighted in this colour. </mark></p><p id="63f920d2-2095-4764-866b-b7e837471dbc" class=""><mark class="highlight-red_background">All tags are highlighted in this colour. </mark></p><h3 id="a886808b-cafd-4435-93df-9a56384269f4" class="">Tags</h3><p id="9ff38c40-cea3-4c94-9abf-5da8fde2a751" class="">This is a list of all tags in this literature review. Press ctrl and f to search for different tags. </p><div id="11ea46cd-49f4-40fd-8892-ca80d4fba64b" class="column-list"><div id="e7b55792-02e4-418e-8b5a-a833487fdea4" style="width:33.333333333333336%" class="column"><ul id="32bf7d22-ee99-48f3-964b-8233792b975b" class="bulleted-list"><li style="list-style-type:disc">#AI</li></ul><ul id="ddb0dca5-67a4-40f1-b463-20eea4df7c9a" class="bulleted-list"><li style="list-style-type:disc">#Noise</li></ul><ul id="e869654c-d426-4b01-9f52-6ff23974d0f6" class="bulleted-list"><li style="list-style-type:disc">#Landscape </li></ul><ul id="c3318b27-fd96-4a7a-bc61-f5234ad67ab5" class="bulleted-list"><li style="list-style-type:disc">#Intelligence </li></ul><ul id="f5eaee0f-4904-4a6e-8185-6aff0d03ff65" class="bulleted-list"><li style="list-style-type:disc">#Science Fiction</li></ul><ul id="b08102d9-1867-497e-9da1-a091ee6b4223" class="bulleted-list"><li style="list-style-type:disc">#Nature</li></ul><ul id="5490a275-e0ec-4ec0-9394-791a3acaf99c" class="bulleted-list"><li style="list-style-type:disc">#3D Graphics </li></ul><ul id="778971c7-a9d7-4294-9aeb-3485d3d5b3ca" class="bulleted-list"><li style="list-style-type:disc">#2D Graphics</li></ul></div><div id="9649d5df-cae4-437c-b122-30cc9c945147" style="width:33.33333333333333%" class="column"><ul id="87a69832-3c97-433d-91d9-2cc7813543b2" class="bulleted-list"><li style="list-style-type:disc">#Game Development </li></ul><ul id="b2495925-bcd3-463f-a138-88edb1447ddd" class="bulleted-list"><li style="list-style-type:disc">#Procedural Generation</li></ul><ul id="4876993b-9568-483e-bf4d-e94bd4bb6b2c" class="bulleted-list"><li style="list-style-type:disc">#Unity </li></ul><ul id="d97f8f68-42df-4a00-ae04-ac770e713c0c" class="bulleted-list"><li style="list-style-type:disc">#Unreal</li></ul><ul id="3825c498-75b4-45a8-8ba0-468f3c5c3c57" class="bulleted-list"><li style="list-style-type:disc">#Game Engine  (other than Unity or Unreal) </li></ul><ul id="5cd45659-c7d5-4491-875d-1f7db5ca9eb1" class="bulleted-list"><li style="list-style-type:disc">#Smart Object </li></ul><ul id="c95772b0-f7b8-4510-b65f-7a110e951729" class="bulleted-list"><li style="list-style-type:disc"></li></ul></div><div id="d042d7b3-e8c8-41bb-a8e6-b240023d7bbf" style="width:33.33333333333334%" class="column"><ul id="530a5af5-9fcc-483d-b09f-295ef32ef189" class="bulleted-list"><li style="list-style-type:disc">#NVIDIA </li></ul><ul id="a8db9d26-9f6d-4767-8a1d-9d164a5d2071" class="bulleted-list"><li style="list-style-type:disc">#YouTube </li></ul><ul id="d5303738-efad-4900-bbee-d4c090059acc" class="bulleted-list"><li style="list-style-type:disc">#Article </li></ul><ul id="63fdad7f-a8c6-4fc8-b9ec-ce77fbede32f" class="bulleted-list"><li style="list-style-type:disc">#Book</li></ul><ul id="aa629e79-e38a-4f33-9f5f-ad8bc5465dca" class="bulleted-list"><li style="list-style-type:disc">#Game</li></ul><ul id="277efdc3-2e86-49e5-ad77-121498979bfe" class="bulleted-list"><li style="list-style-type:disc">#VR</li></ul><ul id="19674352-e02b-4e70-9372-0ba9483a29ca" class="bulleted-list"><li style="list-style-type:disc">#Software</li></ul><ul id="97afa2e7-e2d5-42f1-9674-1f0e8e8b8b21" class="bulleted-list"><li style="list-style-type:disc"></li></ul></div></div><p id="a35ddd16-db16-46e1-abb3-05d7f7a4e6e4" class="">
+</p><h1 id="206d5e75-74ed-4418-9f58-6a93d2b90173" class="">AI Generated landscapes</h1><h2 id="56e717a7-8631-463b-8059-af5f3e69ec98" class="">NVIDIA AI </h2><h3 id="3c90bbe3-0ab7-428b-87b1-4975ea23160f" class="">Landscapes generated using the styleGAN: </h3><figure id="2e623f0e-1e82-46d7-b848-dc49b3c36a05"><div class="source"><a href="https://www.youtube.com/watch?v=z3lsZcV76KE">https://www.youtube.com/watch?v=z3lsZcV76KE</a></div></figure><p id="7cc18907-3f94-4cf9-8478-9d8df8133885" class="">A video demonstrating multiple different landscapes created by the NVIDIA AI styleGAN. Often the landscapes it creates are completely visually incorrect, with the AI creating visuals of objects that are completely unnameable as they just don&#x27;t exist in reality. However, it does create some stunning landscape images every so often. My critique of this video and AI would be that the results are very hit-or-miss for creating a realistic landscape, however it does create very interesting visuals none the less, and will likely become much better at creating more discernible landscapes over time as AI technology improves. </p><p id="d569a129-2db7-4fa6-b213-68642856f013" class="">Examples of two very different images the AI generated; one containing completely undiscernible objects, the other containing a much more realistic landscape. Both are screenshots taken from the video above, and referenced below. </p><p id="18386e4c-a411-49bf-b239-7c462a75cade" class="">A video demonstrating multiple different landscapes created by the NVIDIA AI styleGAN. Often the landscapes it creates are completely visually incorrect, with the AI creating visuals of objects that are completely unnameable as they just don&#x27;t exist in reality. However, it does create some stunning landscape images every so often. My critique of this video and AI would be that the results are very hit-or-miss for creating a realistic landscape, however it does create very interesting visuals none the less, and will likely become much better at creating more discernible landscapes over time as AI technology improves. </p><p id="fe1be848-3df1-463e-8f03-4d6c85d5ca3a" class="">Examples of two very different images the AI generated; one containing completely undiscernible objects, the other containing a much more realistic landscape. Both are screenshots taken from the video above, and referenced below. </p><div id="b829ad07-6267-4876-989f-c76f348f6557" class="column-list"><div id="2eea6212-e396-40b9-ae70-15b3a2492d5a" style="width:50%" class="column"><figure id="39350f4a-47fa-4b2c-8ecd-bc2f81399ade" class="image"><a href="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled.png"><img style="width:714px" src="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled.png"/></a></figure></div><div id="2d45521f-8a62-4478-abaa-355773e6239e" style="width:49.99999999999999%" class="column"><figure id="52ecdb3a-e874-4f30-a10b-c012310bfc9b" class="image"><a href="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%201.png"><img style="width:719px" src="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%201.png"/></a></figure></div></div><p id="716cf07f-4e3d-48d1-b4b3-68298033dc51" class=""><mark class="highlight-blue_background">Alexander Reben (2019) . </mark><mark class="highlight-blue_background"><em>AI Landscapes</em></mark><mark class="highlight-blue_background">. [YouTube video] Available at: https://www.youtube.com/watch?v=z3lsZcV76KE [Accessed 8 Dec. 2021].</mark></p><p id="12579c50-621d-4ba6-9bde-26e1673cc276" class=""><mark class="highlight-red_background">#NVIDIA  #AI #Landscape #2D Graphics #Software #YouTube</mark></p><h3 id="bd9b93d0-6b1d-41c5-8a1e-3ca811709bdb" class="">Dreamscape: Using AI to Create Speculative VR Environments</h3><p id="2d72a26b-0914-4559-9504-8dddf0414902" class="">Here, I am specifically looking at a section in this article about NVIDIA AI and creative AI. </p><p id="ba0fee72-02f4-4e66-bae9-ee83390853a3" class=""><mark class="highlight-blue_background">Jain R. (2021) Dreamscape: Using AI to Create Speculative VR Environments. In: Arai K., Kapoor S., Bhatia R. (eds) Proceedings of the Future Technologies Conference (FTC) 2020, Volume 2. FTC 2020. Advances in Intelligent Systems and Computing, vol 1289. Springer, Cham. </mark><mark class="highlight-blue_background"><a href="https://doi-org.gold.idm.oclc.org/10.1007/978-3-030-63089-8_60">https://doi-org.gold.idm.oclc.org/10.1007/978-3-030-63089-8_60</a></mark></p><p id="0c314162-e2c5-4a0d-92d6-eae4937b2c2c" class=""><mark class="highlight-red_background">#AI #Landscapes #VR #Intelligence </mark></p><h2 id="bcf13809-38c2-4c1b-b8ec-162d16fe781d" class="">Noise and Procedural generation </h2><h3 id="2371741a-a5c6-46a8-8b93-5e9958ac03dc" class=""><strong>Creative AI: Procedural generation takes game development to new worlds</strong></h3><div id="4df89391-10d6-4fd1-a178-3b20d6b64869" class="column-list"><div id="58d68e99-3e7e-42ab-a4db-6ffd7fe93432" style="width:62.5%" class="column"><p id="55d15297-d6c3-4eaa-83a9-6ab703d7ea98" class="">This article describes the artificial intelligence called ANGELINA. This AI has written gone from writing articles where it had a particular fondness for Rupert Murdoch, to participating in game jams using Unity and procedurally creating games. The article discusses how AI could be the next big step in the games industry, as AI becomes more and more competent at creating whole, sensical games which aren&#x27;t restricted by human qualities such as fatigue, emotional needs and with potentially less bias. </p></div><div id="da92b70a-648d-40ca-a80a-1a74eb0b47d4" style="width:37.5%" class="column"><figure id="870cbeeb-5dbd-4836-ba14-06a7934c6451" class="image"><a href="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%202.png"><img style="width:1200px" src="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%202.png"/></a><figcaption>Screenshot from Secret Habitat, a procedurally generated exploration game discussed in the article. </figcaption></figure></div></div><blockquote id="000aefd4-6a40-4926-b019-c43657b8a293" class="">&quot;<mark class="highlight-purple_background">In a world where most current genres and core gameplay mechanics have been around for years, refined again and again to a sharp point, an AI could bring something new to the table.&quot;</mark></blockquote><p id="494a9425-d45c-4e9d-91b5-a800a3353552" class="">This article contains an interview with a Goldsmith&#x27;s research associate, Michael Cook, which could be very useful in going forwards in my research.</p><blockquote id="45a94a0e-a1ac-433d-97fd-d327d7a28330" class=""><mark class="highlight-purple_background">&quot;Procedural content generation feels a bit like violating laws of the universe – creating something from nothing, again and again,&quot; he continues. &quot;Of course it&#x27;s nothing like that really, but you get a rush from seeing something appear suddenly.&quot;</mark></blockquote><p id="b473765d-fd8c-451a-8b43-3953eea0b945" class="">Procedurally generated environments are mentioned as a use of AI within game design, with a mention to Speedtree (a tool to create completely random trees) and the giant game No Man&#x27;s Sky. An AI could also be used to make the game more fitted to the users tastes, for example if a user loves world exploration, then the game would create expansive worlds for this user to navigate whilst if a different user enjoyed this aspect of exploration less, the game would create a more linear world for them to have to navigate. </p><p id="7900c16d-30b8-41d8-9e84-825f3c48157a" class="">One thing to note is that in these AI generated games, they often lose the element of story telling. </p><blockquote id="cdac9eef-2d9e-49cb-9040-88ffe15e5bb6" class=""><mark class="highlight-purple_background">&quot;To me what I think is the big missing area in terms of game generation or automatic game design is the storytelling components, which doesn&#x27;t have this nice physical manifestation that we can work on,&quot; Riedl says. &quot;It&#x27;s more abstract constructs and conceptual sorts of ideas.&quot;</mark></blockquote><p id="e3e4bd3d-16f3-4fb4-a4e7-53ee50845445" class="">I think this is an important thing I should keep in mind when starting to develop prototypes of my ideas as I could end up generating lots of cool looking but empty worlds. </p><p id="5b475663-ff82-4917-a2ca-250e16558298" class="">The article talks of this use of AI within games being a mostly undeveloped field, which is exciting to me as whilst I don&#x27;t have large amounts of technical capabilities to make this field expand I can watch it grow and potentially be a part of it in the future. Overall, I found this article very useful as it fits into my project scope very well, and helped in finding different resources and games to look at too.  </p><p id="cfdf5915-c756-4d15-8270-90aff4dc53ef" class="">Moss, Richard (2015) &quot;Creative AI: Procedural generation takes game development to new worlds&quot;, New Atlas [Online] Available here: <mark class="highlight-blue_background"><a href="https://newatlas.com/creative-ai-procedural-game-development-angelina/35874/">https://newatlas.com/creative-ai-procedural-game-development-angelina/35874/</a></mark></p><p id="704a6eb3-bb54-4de1-87cd-d329b2fb1b57" class=""><mark class="highlight-red_background">#Procedural Generation #3D Graphics #AI #Unity #Game Engines #3D Graphics </mark></p><h3 id="5d104bf0-6b27-4d3a-909b-70ab7062bc1b" class="">Procedural modelling of terrains with constraints</h3><p id="1d527401-04c7-47c2-bcbf-6e39cf9af667" class=""><mark class="highlight-blue_background"><a href="https://link-springer-com.gold.idm.oclc.org/content/pdf/10.1007/s11042-020-09476-3.pdf">https://link-springer-com.gold.idm.oclc.org/content/pdf/10.1007/s11042-020-09476-3.pdf</a></mark></p><p id="635561ae-453b-4513-8651-9c3d2d2a4751" class=""><mark class="highlight-red_background">#Procedural Generation #3D Graphics </mark></p><h3 id="f7acd346-5b3e-40b4-86ed-47420b75b490" class="">Procedural Generation of 3D Canyons</h3><p id="addaf92b-cb62-4c0e-8221-445972b0a553" class="">Article discussing procedural generation of terrain and the calculations associated with this such as noise, and the alterations to these noise values . </p><blockquote id="84ac2272-85c5-45a9-b5df-c06d752dbbe6" class=""><mark class="highlight-purple_background">Perlin noise is fast, but it tends to create terrains that are uniform and random, often requiring significant post-processing to add interesting features</mark></blockquote><p id="4b038617-547f-45db-8804-e09231d85d58" class="">
+</p><p id="f5c7d86a-8e0e-419c-b408-c35861cdf757" class=""><mark class="highlight-blue_background"><a href="https://ieeexplore-ieee-org.gold.idm.oclc.org/document/6915296">https://ieeexplore-ieee-org.gold.idm.oclc.org/document/6915296</a></mark></p><p id="cdf02197-308f-4cb8-8c56-7cc9cee8f2c8" class=""><mark class="highlight-red_background">#Procedural Generation #3D Graphics </mark></p><p id="adbada18-43ec-49da-b268-a8808227bf61" class="">
+</p><h3 id="e27ecd89-71be-4ddb-80bd-b809a5b173c0" class="">Building Worlds with Noise Generation | No Man&#x27;s Sky</h3><figure id="ae1c3d21-c534-49b9-9543-6d99c0e91324"><div class="source"><a href="https://www.youtube.com/watch?v=SePDzis8HqY&amp;t=1613s">https://www.youtube.com/watch?v=SePDzis8HqY&amp;t=1613s</a></div></figure><p id="2f0ba7f9-ef1b-4757-8bc0-7ef0bc50f875" class="">Video from one of the main programmers of the game No Man&#x27;s Sky discussing how the game utilises noise for world generation, and the process of creating these algorithms for this game as well as other general information about the game&#x27;s creation. </p><div id="33e58555-9479-49ad-bb5f-cd7e0a25cee4" class="column-list"><div id="3be68727-adbd-4456-9406-6df35f0bde16" style="width:50%" class="column"><p id="cfab83fe-70f3-4ff3-99bd-0f97f8bf601f" class="">Discusses the downsides to Perlin noise, for example it creating very repetitive features such as this mountainous landscape, which doesn&#x27;t really mirror any real life mountains as <mark class="highlight-purple_background">&#x27;the slope, the gradient is reasonably constant.&#x27;</mark></p></div><div id="c48cf41b-46bb-490b-9c86-9256c32f3280" style="width:50%" class="column"><figure id="b840969f-e6f1-4d15-a243-fa4d1ed99dc7" class="image"><a href="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%203.png"><img style="width:240px" src="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%203.png"/></a></figure></div></div><p id="c0e0b49d-84f7-4f36-b5e9-a6b3e77ee8e4" class="">They tried creating noise with real world data plugged into it to try and create a more realisitc looking landscape, however then came to the conclusion that this terrain they had generated was really unexciting. </p><p id="ae1d532f-56ca-4449-b373-dc29fa0c298b" class=""><mark class="highlight-purple_background">&quot;Noise, in the real world, is exponentially distributed&quot;  &quot;However, it is unfortunate. The real world is super boring&quot; </mark></p><p id="7eaf51a3-a445-45c1-b5d0-206e5135fd46" class="">Different octaves of noise can have different prominence, eg the first octave doesn&#x27;t need to be very prominent in the last calculation as this is what can often drive the extreme repetitiveness. </p><p id="eb8ec800-6e57-47dc-b9dd-1dd66e6c0d84" class="">Some slides from the presentation in the video:</p><div id="a09d598c-4360-4a74-bb99-f11ada3cc57a" class="column-list"><div id="20abccc3-6855-45c1-8315-754d39a7d639" style="width:50%" class="column"><figure id="1ee4ba3f-cdee-45f4-bce5-1471895f0c6b" class="image"><a href="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%204.png"><img style="width:325px" src="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%204.png"/></a></figure><figure id="761674ac-8467-49ff-bcc7-90b329e41101" class="image"><a href="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%205.png"><img style="width:851px" src="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%205.png"/></a></figure></div><div id="23f1de16-b300-4961-bd33-31896e913ea3" style="width:50%" class="column"><figure id="498af101-a637-4f10-baab-c5edfedff368" class="image"><a href="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%206.png"><img style="width:463px" src="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%206.png"/></a></figure><figure id="6efd4f4b-ca4f-4c3b-8d0f-6657adf2f223" class="image"><a href="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%207.png"><img style="width:561px" src="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%207.png"/></a></figure></div></div><p id="e9cebb87-c1b1-49a5-843a-053c73b0a689" class=""><mark class="highlight-red_background">#Youtube #Procedural Generation #Game Development #Noise #3D Graphics #Game #Youtube</mark></p><p id="7e3b1ba0-d134-4f1c-bb26-6634fd5baa90" class=""><mark class="highlight-blue_background">Sean Murray (2017) Building Worlds with Noise Generation | No Man&#x27;s Sky [[YouTube video] avaliable at: </mark><mark class="highlight-blue_background"><a href="https://youtu.be/SePDzis8HqY"><strong>https://youtu.be/SePDzis8HqY</strong></a></mark></p><h3 id="2db7a686-7a7f-40d1-b23d-c6abc7827a08" class="">Procedurally Generated Low-Poly Terrains in Unity</h3><figure id="3846cd1d-70d1-43c2-8ddb-46a6ee14712c"><div class="source"><a href="https://www.youtube.com/watch?v=sRn8TL3EKDU">https://www.youtube.com/watch?v=sRn8TL3EKDU</a></div></figure><p id="8bdb77ac-611a-4017-bb99-2dd84f3cb1dd" class=""><mark class="highlight-red_background">#Unity #Procedural Generation #3D Graphics #Game Engine #YouTube </mark></p><p id="f6451c74-920d-4de3-9e46-5304a64b1a81" class=""><mark class="highlight-blue_background">[YouTube video</mark></p><h1 id="0b43d3ce-7225-418e-9b52-969488c3036f" class=""><span style="border-bottom:0.05em solid">Smart/Dumb Objects </span></h1><h1 id="f7ceffea-a9e7-4820-aaf1-bc5c23637da6" class=""><span style="border-bottom:0.05em solid">Natural Generation. </span></h1><h3 id="b58e7c0f-49cf-4bbc-8b9b-5cd142fc5792" class=""><strong>Speculative Before the Turn: Reintroducing Feminist Materialist Performativity</strong></h3><p id="4c4e1e53-cb91-483b-a2c0-fbabf3b62e1f" class="">This paper was a reading that was initally for my Critical Studies class, but it has one section about Rotifers which I find particularly interesting. They are a type of bacteria that reproduce entirely asexually as the species has no living males in it and seemingly hasn&#x27;t for around 80 million years, so the living females clone themselves in order to reproduce. The species import and copy DNA from other organisms it comes across, with studies showing they contain multitudes of foreign DNA from plants, fungi and other bacteria. They are also extremely </p><p id="b2a9cdd8-2e5b-44f9-90c1-7aa323223fb6" class="">Whilst this concept isn&#x27;t particularly relevant to AI, they could bring up questions about intelligence. Are these beings aware that they&#x27;re completely female, are extremely durable and can import the DNA of other creatures? Probably not, or they&#x27;d probably have evolved human level intelligence at least by now</p><p id="71668c4a-ee93-42d1-8e04-ce921893d511" class="">For me, the rotifer gives me inspiration to some creatures or mobs that could be part of the world, which opens up many possibilities. A gene-swapping, adaptive, entirely female species could be so many different things and would be an interesting group of entities to try and develop through code, with them swapping different genes and creating new creatures each time the code runs. The basic traits of rotifers have been used in science fiction previously, such as by Octavia Butler in her novels, and I feel like I could potentially include something similar in my project. </p><p id="a447aaf9-4ac5-4ae0-9105-af8d8a2906d1" class="">Overall, this article is about something completely different to the subtopic of Rotifers, and instead is what my Critical Studies seminar leader, Annie Goh, referred to as &#x27;Academic Beef&#x27; between different philosophers. The topic of Rotifers in this article feels rather random and unrelated to the rest of the essay, as the rest is a discussion about the &#x27;subject&#x27; and the &#x27;object&#x27; within ontology, but despite this I am still glad to have learned about the existence of this odd species. </p><p id="d1c30fa3-59da-48f0-9c84-5a4f4a0c5e09" class="">
+</p><p id="9ee358b0-d50b-4615-8e24-d1f3580e709c" class=""><a href="https://epress.lib.uts.edu.au/journals/index.php/csrj/article/view/4324">https://epress.lib.uts.edu.au/journals/index.php/csrj/article/view/4324</a></p><p id="7d452d10-a5a8-4e39-a83a-d223985fe2e8" class=""><mark class="highlight-red_background">#Article #Intelligence #Science Fiction #Nature</mark></p><p id="bd6b16f2-f698-486d-be45-1f6fe6381311" class="">
+</p><p id="c99cf58f-0b22-4c7e-9967-435f52979597" class="">
+</p><p id="fc88b59c-c6eb-4ce9-b582-a76f5f87b161" class=""><a href="https://youtu.be/r_It_X7v-1E">https://youtu.be/r_It_X7v-1E</a></p><p id="6ad72163-badc-4a90-a5a7-11cca2e5542f" class="">
+</p><h1 id="7eb42794-5bec-46f1-9600-0b32df444c0c" class="">Games Research </h1><h2 id="ce17c32b-e145-4c85-8c8b-cb47a5db6ef2" class="">Research into Game Development </h2><h3 id="6bfc40e1-d72d-4ca7-b97d-e46cf03feb44" class="">I spent a week making an AIs game idea - Sebastian Lague </h3><figure id="007305ec-2614-438f-a77d-e6d5da079ab8"><div class="source"><a href="https://youtu.be/PGk0rnyTa1U">https://youtu.be/PGk0rnyTa1U</a></div></figure><p id="7d382298-a58f-47ec-b030-78076a43914f" class="">This is a video in which Sebastian Lague created a game called Super Chore Man in the game engine Unity, with the use of AI being that the AI generated a random idea for a game. This video was very helpful in my understanding of Unity and how games like this are developed, despite me being no where near this level of skill in Unity as it depicts the use of particle systems, material textures and multiple shaders. However this video has no use to me in terms of potentially making or utilising an AI in Unity though, which could be where my project leads me in the future. </p><p id="a76803d7-ab34-4bc6-a695-c63f4aaa73c8" class="">My main criticism of this video is that the use of AI is fairly minimal, with the one use being to generate a random idea to then create a game from. This added with the human choice of which AI generated idea to use out of many takes the video and game further and further from the artificial intelligence aspect. However, I do not think the point of the game is to be majority AI or use AI very much as it is merely there to help solve a creative block, so whilst this wouldn&#x27;t be a good criticism of the video as a whole, in the context of my research I do think it&#x27;s use of AI is limited. Despite this, I still thought the video was very useful in terms of increasing my understanding of Unity as a program and the concepts within games programming. </p><p id="2757c5e6-4005-4891-9dab-411cc9189b17" class=""><mark class="highlight-red_background">#YouTube #Unity #AI #Game Development #YouTube</mark></p><p id="fe90c7ed-6612-4cc5-869b-e2385f6901fd" class=""><mark class="highlight-blue_background">Sebastian Lague (2021) I Spent a Week Making an AI&#x27;s Video Game Idea [YouTube video] Available at: </mark><mark class="highlight-blue_background"><a href="https://www.youtube.com/watch?v=PGk0rnyTa1U">https://www.youtube.com/watch?v=PGk0rnyTa1U</a></mark></p><h3 id="64c7189e-5aac-441c-86fd-12e02832d284" class="">Game Devs and Others: Tales From The Margins. </h3><div id="c829d6be-12af-4c62-bcb6-94f83c7a64c3" class="column-list"><div id="4c764b29-a897-43f5-a496-7ad35c1f4b8d" style="width:25%" class="column"><figure id="3653ef93-c878-417d-9f01-9690e74faf23" class="image"><a href="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%208.png"><img style="width:240px" src="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%208.png"/></a></figure></div><div id="9cb61199-6c01-403e-83ec-daa79da998e2" style="width:75%" class="column"><p id="dfd1c5f1-2134-4b18-b5eb-315db94a1478" class="">This book was useful to gain an insight into the gaming industry and also to learn some new ways to potentially produce games. Whilst there was no mention of AI or anything about creating generative landscapes, I found it an interesting read. This book is multiple essays written by people who make games, who are also in a minority group.</p><p id="3badf70e-1313-4c66-98bf-56e9a8a65690" class="">It was helpful in learning about some new software, such as the software Twine, which you can use to create text based story games which can output to HTML and CSS. This could be potentially useful to me in the future for creating prototypes if I decide to add some element of storytelling to my project.</p></div></div><p id="176eb988-75e9-4864-8842-534a1de1b555" class=""><mark class="highlight-red_background">#Book #Game Engine #Game Development</mark></p><h2 id="e954e927-8739-4fce-82cd-00c8461392de" class="">Games</h2><h3 id="a48a2549-4bec-4786-9e6c-5b0b3e10276c" class="">Stone Story RPG</h3><p id="87b5419b-5113-4396-9f5f-8ecb3b32e2f7" class="">Stone Story is a game where an AI controls all the movement of the character. The user is still necessary and makes all the decisions outside of the movement, like which areas to go and what to do with inventory items, but they ultimately have no direct control of the character that they play as. This makes the game a part of the auto-RPG genre. </p><p id="25cab28d-fede-4692-9bb7-1e72cc1c206d" class="">Quote from the game&#x27;s steam page: </p><blockquote id="328b6436-c8ac-40a1-aefd-70b93cc9ae08" class=""><mark class="highlight-brown_background">One of Stone Story&#x27;s defining mechanics is that you have </mark><mark class="highlight-brown_background"><strong>no direct control of the player character</strong></mark><mark class="highlight-brown_background">, as an A.I. does all the exploring, combat and looting. Though this is an auto-RPG, that doesn&#x27;t mean it&#x27;s an idle game. Potions and special abilities are maximized by good timing. Boss fights are intense, requiring quick item swaps if the boss changes patterns.</mark></blockquote><p id="e8d92476-5557-49d0-a8e9-e53a0060872f" class="">My criticism of this game from only playing the demo through myself is that when you are playing, it isn&#x27;t evident that the thing controlling the game is an AI, it feels more like the character is directly programmed to do its tasks to complete the game in a random order instead of an AI deciding what to do in what order. All the tasks are so basic and its doesn&#x27;t learn anything, so I&#x27;m not sure if it could technically be called intelligence, if its just following the same algorithm over and over again. But then, this thinking could also be applied to lots of other &#x27;smart&#x27; devices or processes and brings back around the question of &#x27;what is intelligence?&#x27;.</p><p id="1459e625-eecd-4f5d-b792-1926a9d326af" class="">Despite this, I think its still a good resource for my project as an example of an AI within a game, and provides some inspiration for potentially adding more to my project than just a procedurally generated environment. </p><p id="0d91cc3e-3423-425c-b1fa-3ca35b77b7fa" class=""><mark class="highlight-blue_background">Stone Story RPG (2019) San Mateo, California, Martian Rex. Available from: </mark><mark class="highlight-blue_background"><a href="https://store.steampowered.com/app/603390/Stone_Story_RPG/">https://store.steampowered.com/app/603390/Stone_Story_RPG/</a></mark></p><p id="42f673da-6131-44ec-94c6-ffe9caaa16a7" class=""><mark class="highlight-red_background">#Game #AI #2D Graphics </mark></p><h3 id="ec700e6e-2992-4977-b7e1-8f5df9c2a61e" class=""><strong>Panoramical</strong></h3><p id="45508ea3-375e-480f-81f0-c15ef7014138" class="">With no AI or intelligence present in this game, Panoramical is more of a visual inspiration for me as its graphics are stunning. It&#x27;s Steam page describes it as an &quot;immersive musical adventure through space and time&quot; with &quot;dreamlike landscapes.&quot;</p><div id="c3555534-3140-4307-9edd-6fa37c2d688f" class="column-list"><div id="6aa7afd2-1f33-4f70-b45e-f364a47dbdba" style="width:50%" class="column"><figure id="a0bd5b80-a416-4dfe-b6a9-781a09b05d84" class="image"><a href="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%209.png"><img style="width:460px" src="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%209.png"/></a></figure><figure id="e4bc4bb2-fdd9-4298-b3d0-1e5687891d42" class="image"><a href="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%2010.png"><img style="width:336px" src="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%2010.png"/></a></figure></div><div id="d1f8d313-dbb1-485c-a069-f411e13f36e5" style="width:49.99999999999999%" class="column"><figure id="7398da9d-5964-43ef-b963-acb59bc6c4a3" class="image"><a href="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%2011.png"><img style="width:596px" src="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%2011.png"/></a></figure><figure id="6c3c17e0-597e-469d-b881-df812ef09086" class="image"><a href="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%2012.png"><img style="width:1680px" src="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%2012.png"/></a></figure></div></div><p id="8e7912e3-da7a-4ff2-9bec-98e8a07386b1" class=""><em>Screenshots from the game. </em></p><blockquote id="e3191831-c888-44b1-a521-c3116c8a3c0a" class="">&quot;<mark class="highlight-brown_background">What I love about Panoramical, from the little of it I&#x27;ve played, is that the places it takes you to feel so fleeting, so unrecoverable. This is not entirely true: you can probably keep track of where you&#x27;ve placed the handful of sliders that are at your control to build each landscape, and I think you can even share specific environments through Twitter. No matter: there&#x27;s still a wonderful impermanence to it all, a sense that, everywhere you go inside Panoramical, you&#x27;re witnessing a freak wonderland built from an unlikely alignment of many different elements.&quot; (Donlan, 2015)</mark></blockquote><p id="bde67fa7-c759-4115-ae06-71a5b7be133e" class=""><mark class="highlight-blue_background">Donlan, Christian (2015) Panoramical: An hour in a prog rock wonderland. Eurogamer [online]. Available at: </mark><mark class="highlight-blue_background"><a href="https://www.eurogamer.net/articles/2015-09-21-panoramical-an-hour-in-a-prog-rock-wonderland">https://www.eurogamer.net/articles/2015-09-21-panoramical-an-hour-in-a-prog-rock-wonderland</a></mark></p><figure id="c657c394-754f-4122-a85d-6b64c9d9081e"><div class="source"><a href="https://vimeo.com/97956886">https://vimeo.com/97956886</a></div></figure><p id="0c85897f-a715-4804-b4e0-dd2944cce8f2" class=""><mark class="highlight-red_background">#Game #3D Graphics #Landscape </mark></p><p id="7639e1d1-f673-464f-bf55-2f94a692c1ed" class=""><mark class="highlight-blue_background">Panoramical (2015) Brooklyn, New York. Finji. Available online: </mark><mark class="highlight-blue_background"><a href="http://www.panoramic.al/">http://www.panoramic.al/</a></mark><mark class="highlight-blue_background"> </mark></p><p id="62762b88-8bd0-4e4a-9265-ec9d7381d2a5" class="">From this, I also discovered one of the creator&#x27;s website which has many other projects on it which could be useful moving forwards in this project. Found at: <a href="https://fernandoramallo.github.io/2019/">https://fernandoramallo.github.io/2019/</a><strong> </strong></p><h3 id="bcd6322c-978e-4ae4-9644-c368544f5bf8" class="">Minecraft</h3><figure id="2f285ed2-8079-4df7-bc3d-eedd05b16d42"><div class="source"><a href="https://www.youtube.com/watch?v=FcxYTe31isA">https://www.youtube.com/watch?v=FcxYTe31isA</a></div></figure><div id="a63b8982-c0d8-4b9d-8d7a-bdb3266106d3" class="column-list"><div id="47cd1cef-8b9b-4969-a6b6-f4f3ab361dba" style="width:50%" class="column"><p id="d318ce8d-5001-4156-8bd2-7b230d21d601" class="">This video above and sighted below describes the procedural generation to create stunning blocky worlds within the game Minecraft. Worlds are generated in chunks, 16 by 16 by 256 blocks pieces of the world, which all come together to create the entire world. Initial chunks are created when a player first enters the world, and then chunks are generated as player moves to create this entire world.  Works again using a seed, and every separate biome in the game is generated slightly differently. </p></div><div id="ae8090bd-fcb1-469c-a638-1718279ce50d" style="width:50%" class="column"><figure id="9d10dfbc-2e31-44d8-83f8-763374ee8d6b" class="image"><a href="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%2013.png"><img style="width:657px" src="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%2013.png"/></a><figcaption>Image from the <a href="http://Minecraft.net">Minecraft.net</a> website. </figcaption></figure></div></div><p id="297408c4-c2e2-4daa-afc5-abac584849c5" class="">Something interesting about Minecraft generation I found in this video is the variable of temperature that affects the world generation. Each biome and altitude has a different value which affects a number of different things, such as if it rains or snows but also the colour of water, grass and leaves. It also restricts biomes of vastly different temperatures from generating next to each other. This variable has been very interesting to learn about as it could be very helpful in creating my own project.</p><p id="aa2532a2-ea3f-49cb-a6fa-c6cbbf2bd12b" class="">Minecraft was a big inspiration of No Man&#x27;s sky, as said in Sean Murray&#x27;s presentation cited above. He said he essentially rebuilt Minecraft from scratch to gain an idea of how the landscape generation worked, in order to implement a similar method into his own product (Murray, 2017)</p><p id="14f224d1-8675-48e1-afad-d9a8d4757df5" class="">One criticism of Minecraft overall as a game would be its lack of overall story, narrative or compelling ultimate goal. There is one goal in the game, to kill the Ender dragon in the End dimension, however the game doesn&#x27;t tell you to do this, and you can only learn of it if you research it outside of the game. It also is only a small quest, and after completion you&#x27;re left in this expansive landscape with no other purpose than build what ever is in your imagination or explore. Whilst this can be fun for some time, it can get boring fairly quickly. </p><p id="c75cdffc-46dd-4af3-b79a-8371c310d23e" class="">Video:</p><p id="796ff6cb-0b67-49c1-8a72-a2da4284766b" class=""><mark class="highlight-blue_background">Remption Games (2021) How Minecraft Generates Massive Virtual Worlds from Scratch [YouTube video] Available at: </mark><mark class="highlight-blue_background"><a href="https://www.youtube.com/watch?v=FcxYTe31isA">https://www.youtube.com/watch?v=FcxYTe31isA</a></mark></p><p id="520bb356-1fd5-4b5f-bf7b-4a20fd3ac181" class="">Game:</p><p id="95a56ba4-dd56-47f0-8dcc-f8bf50ca51df" class=""><mark class="highlight-blue_background">Mojang, 2011. Minecraft (1.18) [PC] Mojang AB, Stockholm.</mark><mark class="highlight-blue_background"><strong> </strong></mark><mark class="highlight-blue_background">Available here: </mark><mark class="highlight-blue_background"><a href="http://minecraft.net">minecraft.net</a></mark><mark class="highlight-blue_background"> </mark></p><p id="8a6b5a3c-0a97-40e9-9e0b-25783f547781" class=""><mark class="highlight-red_background">#Game #3D Graphics #Noise #Procedural Generation #YoutTube </mark></p><h3 id="b8718d6a-a52a-4e8b-837a-aac42f297432" class="">No Mans Sky</h3><p id="f217429a-4d4c-47e0-8b3f-a06f3b0fae66" class="">All landscapes are procedural generated <a href="https://www.theatlantic.com/technology/archive/2016/02/artificial-universe-no-mans-sky/463308/">https://www.theatlantic.com/technology/archive/2016/02/artificial-universe-no-mans-sky/463308/</a></p><figure id="262abe0e-9d0d-4a27-b410-1e86b1b2d24c" class="image"><a href="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%2014.png"><img style="width:976px" src="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%2014.png"/></a></figure><p id="14b7691a-7493-4b90-ada2-e396aebb69bc" class="">
+</p><p id="66284f0a-4917-4496-b637-2c2aa349fe2e" class=""><mark class="highlight-red_background">#Game #3D Graphics #Noise #Procedural Generation </mark></p><p id="856d4f94-82e6-4e03-bf5e-e52db2bf1382" class=""><mark class="highlight-blue_background">Hello Games, 2016. No Man&#x27;s Sky [PS4] Guildford, UK. Hello Games. Available here: </mark><mark class="highlight-blue_background"><a href="https://www.nomanssky.com/">https://www.nomanssky.com/</a></mark></p><h1 id="360c6bc2-de07-4c9e-80d0-25954ad5ba4a" class="">Software</h1><h2 id="14c7eb32-a7fd-487a-8add-39ff0a6a5154" class="">Speedtree</h2><p id="e820cb66-e7a3-4b01-92bb-bfc53dfbadbc" class="">As mentioned in another mentioned article in this literature review &quot;Creative AI: Procedural generation takes game development to new worlds,&quot; this is a computer program that is used to create 3D models of trees, and can generate completely random trees within game engines such as Unity or Unreal</p><p id="21451bdf-52f2-4663-b4e4-6c4ffa85497a" class="">This could be a software that could be very useful for me to look into, however could be done in Blender or Unity without it, so I&#x27;m not sure it is completely necessary.  Random tree or 3D feature generation is also something I may potentially want to work on myself instead of finding a program that already does it, but this program could be useful for prototypes. </p><p id="bd6a3f44-0ad3-4623-a180-78b18ec0ec57" class=""><a href="https://store.speedtree.com/">https://store.speedtree.com/</a></p><p id="ce4327d9-5899-4570-82a3-1fd589adb4e8" class=""><mark class="highlight-red_background">#Software #Unity #Game Engines #3D graphics #Landscape </mark></p><h1 id="0dfd5f80-a1dd-4b8f-ab9a-50e53375535e" class="">Visuals Mood board </h1><p id="62da4964-d04e-44c8-9804-c7a0d433f6f8" class="">Mood board of some random graphics and visuals that I like. I&#x27;m not looking to implement all the ideas here, more to get a feel of what graphics I do like that could be potentially investigated further in the future. </p><div id="f18479b1-c5ba-42c4-a9a3-43cf1ecda60e" class="column-list"><div id="26d414b5-8d3e-47bb-a9db-b51e995571a7" style="width:50%" class="column"><figure id="a92748b5-9a55-4c0c-9d54-a744347c794a" class="image"><a href="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%2015.png"><img style="width:1440px" src="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%2015.png"/></a><figcaption>Image from Bryce Butcher (2021), Twitter. Available from:<a href="https://twitter.com/BryceBucher/status/1466063446567440386">https://twitter.com/BryceBucher/status/1466063446567440386</a> </figcaption></figure><figure id="adb2c3b0-40c7-4c62-84f5-b7e48eb8dd47" class="image"><a href="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%2016.png"><img style="width:434px" src="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%2016.png"/></a><figcaption>Image from A Crone&#x27;s Yarn (2021), Twitter. Available from:<a href="https://twitter.com/ACronesYarnGame/status/1468900507817324549">https://twitter.com/ACronesYarnGame/status/1468900507817324549</a></figcaption></figure><p id="35eb82af-1aa3-4e9c-85bb-b17a778ec317" class="">
+</p></div><div id="2ceaf51c-a39b-42ba-b025-db29d34376ef" style="width:50%" class="column"><figure id="c0615ece-c038-4f56-86d4-301c9d8909d3" class="image"><a href="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%2017.png"><img style="width:497px" src="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%2017.png"/></a><figcaption>Image from Voxel Tactics (2021), Twitter. Available from:<a href="https://twitter.com/VoxelTactics/status/1463470000224800770">https://twitter.com/VoxelTactics/status/1463470000224800770</a></figcaption></figure><figure id="a58460b1-3505-40a8-b93e-95165c9f338e" class="image"><a href="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%2018.png"><img style="width:1280px" src="Literature%20Review%2039350f4a47fa4b2c8ecdbc2f81399ade/Untitled%2018.png"/></a><figcaption>Image from game by Oleander Garden, called PAGAN: AUTOGENY<strong> </strong>(2019). Avaliable here:<a href="https://oleandergarden.itch.io/pagan3">https://oleandergarden.itch.io/pagan3</a></figcaption></figure></div></div><p id="7013f9a8-ea51-4b90-b165-585fadc298dd" class="">
+</p></div></article></body></html>
